@@ -10,6 +10,7 @@ A backend service that generates personalized daily meal plans based on user hea
 - Supports food image upload to get estimated nutritional breakdown
 
 ## Project Structure
+```
 
 jivo-care-assignment/
 ├── main.py               # app entry point, registers all routes
@@ -26,6 +27,7 @@ jivo-care-assignment/
 ├── data/
 │   └── meals.json        # indian meal dataset with nutrition info
 └── requirements.txt
+```
 
 
 ## Tech Stack
