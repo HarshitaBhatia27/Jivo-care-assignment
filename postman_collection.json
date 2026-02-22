@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "JivoCare Diet Recommendation API",
+    "description": "API collection for personalized diet and meal recommendation service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "User Profile",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "url": {"raw": "http://localhost:8000/users/", "host": ["localhost"], "port": "8000", "path": ["users", ""]},
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Harshita\",\n  \"age\": 23,\n  \"height_cm\": 162,\n  \"weight_kg\": 55,\n  \"activity_level\": \"moderate\",\n  \"dietary_preference\": \"veg\",\n  \"health_goal\": \"weight_loss\",\n  \"allergies\": null,\n  \"health_conditions\": null\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:8000/users/", "host": ["localhost"], "port": "8000", "path": ["users", ""]}
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:8000/users/1", "host": ["localhost"], "port": "8000", "path": ["users", "1"]}
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": {"raw": "http://localhost:8000/users/1", "host": ["localhost"], "port": "8000", "path": ["users", "1"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meals",
+      "item": [
+        {
+          "name": "Get All Meals",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:8000/meals/", "host": ["localhost"], "port": "8000", "path": ["meals", ""]}
+          }
+        },
+        {
+          "name": "Filter Meals by Tag",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8000/meals/filter?tag=veg",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["meals", "filter"],
+              "query": [{"key": "tag", "value": "veg"}]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Recommendations",
+      "item": [
+        {
+          "name": "Get Meal Plan for User",
+          "request": {
+            "method": "GET",
+            "url": {"raw": "http://localhost:8000/recommendations/1", "host": ["localhost"], "port": "8000", "path": ["recommendations", "1"]}
+          }
+        }
+      ]
+    },
+    {
+      "name": "Food Image Analysis",
+      "item": [
+        {
+          "name": "Analyze Food Image",
+          "request": {
+            "method": "POST",
+            "url": {"raw": "http://localhost:8000/food-analysis/", "host": ["localhost"], "port": "8000", "path": ["food-analysis", ""]},
+            "body": {
+              "mode": "formdata",
+              "formdata": [{"key": "file", "type": "file", "src": "any_food_image.jpg"}]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
